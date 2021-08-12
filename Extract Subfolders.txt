@@ -1,0 +1,1 @@
+FOR /R %I IN (*.zip *.7z *.rar) DO (7Z x "%I" -aoa -o"%~dpI\*" |FIND "Everything is Ok" >nul &&DEL "%I" &&ECHO.%I : EXTRACT SUCCESS >>SUCCESS.TXT ||ECHO.%I : EXTRACT FAIL - ARC NOT DELETED >>ERR.TXT)
